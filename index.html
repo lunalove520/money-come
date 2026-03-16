@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>玄天上帝問事・開財門 | 科技與藝術的巔峰和鳴</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#8A151B',     // 參考圖深紅色
+                            cream: '#F4EFE6',   // 參考圖米白宣紙色
+                            gold: '#B89454',    // 扁平啞金色
+                            dark: '#2A2A2A',    // 內文深灰
+                            border: '#DCD3C6'   // 邊框色
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F4EFE6;
+            color: #2A2A2A;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 隱藏原生捲軸但保持可捲動 */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4EFE6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B89454;
+            border-radius: 3px;
+        }
+
+        /* 元素進場動畫 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 手風琴折疊樣式 */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        }
+        .accordion-item.active .accordion-content {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* 底部懸浮按鈕 */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(244, 239, 230, 0.95);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid #DCD3C6;
+            padding: 1rem;
+            z-index: 50;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            box-shadow: 0 -4px 20px rgba(138, 21, 27, 0.08);
+        }
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+
+        /* IG 嵌入容器 */
+        .ig-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- 用一個最大寬度容器包裹，讓它在桌機也像手機版的專注視覺 -->
+    <div class="max-w-md mx-auto bg-brand-cream min-h-screen shadow-2xl relative pb-20 overflow-hidden">
+
+        <!-- 區塊 01: HERO -->
+        <header class="bg-brand-red text-brand-cream pt-20 pb-24 px-6 relative flex flex-col items-center justify-center min-h-[85vh] text-center">
+            <!-- 裝飾背景文字 -->
+            <div class="absolute inset-0 overflow-hidden flex items-center justify-center opacity-5 pointer-events-none">
+                <span class="font-serif text-[12rem] font-bold leading-none whitespace-nowrap text-brand-gold">開財門</span>
+            </div>
+            
+            <div class="relative z-10 w-full reveal active">
+                <p class="text-brand-gold font-serif tracking-widest text-sm mb-4 border-b border-brand-gold/30 pb-2 inline-block">玄天上帝問事・高維診斷</p>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    財運卡住了？<br>
+                    <span class="text-brand-gold mt-2 block">Luna 幫妳開財門</span>
+                </h1>
+                <p class="text-brand-cream/80 text-sm md:text-base leading-relaxed mb-10 max-w-[280px] mx-auto">
+                    不用再猜為什麼錢留不住。<br>玄天上帝問事，幫妳找到原因，直接把財門打開。
+                </p>
+                <a href="#pricing" class="inline-block bg-brand-gold text-brand-red font-bold px-8 py-4 rounded-none tracking-widest hover:bg-white transition-colors duration-300 w-full max-w-[280px]">
+                    了解服務方案
+                </a>
+            </div>
+        </header>
+
+        <!-- 區塊 02: 痛點 -->
+        <section class="py-16 px-6 relative reveal">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-2xl text-brand-red font-bold mb-3">妳是不是也有這種感覺？</h2>
+                <div class="w-12 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+            
+            <ul class="space-y-5 text-brand-dark leading-relaxed">
+                <li class="flex items-start">
+                    <span class="text-brand-gold mr-3 text-xl">✦</span>
+                    <p>明明已經很努力了，事業卻好像一直啟動不了？</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-gold mr-3 text-xl">✦</span>
+                    <p>感覺財路被什麼東西卡住了，就是找不到原因？</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-gold mr-3 text-xl">✦</span>
+                    <p>好不容易賺到的錢，卻總是莫名其妙就消失了？</p>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-gold mr-3 text-xl">✦</span>
+                    <p>感情、工作、家庭，好幾件事同時卡住，完全不知道要從哪裡開始？</p>
+                </li>
+            </ul>
+
+            <div class="mt-10 p-5 bg-white border border-brand-border text-center text-sm text-brand-red font-medium leading-relaxed">
+                有時候，問題真的不在於妳不夠努力。<br>而是有什麼東西，妳還沒有看見。
+            </div>
+        </section>
+
+        <!-- 區塊 03: 服務說明 -->
+        <section class="py-16 px-6 bg-brand-red text-brand-cream reveal">
+            <div class="mb-10">
+                <h2 class="font-serif text-3xl font-bold mb-3 text-brand-gold">這個不只是算命<br>還是一種高維診斷</h2>
+                <p class="text-sm opacity-80 leading-relaxed">透過玄天上帝法壇問事與炁絡筆能量校準，問事過程中神明會點出妳未曾提及的隱情。妳給的問題越具體，得到的解決方案就越精準。</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- 點 1 -->
+                <div class="border-l-2 border-brand-gold pl-4">
+                    <h3 class="font-serif text-xl font-bold text-brand-gold mb-2">一、神準驗證：有時神明會說出你沒說的事</h3>
+                    <p class="text-sm leading-relaxed mb-3 opacity-90">問事最重要的前提是：<strong class="text-white">妳給的問題越具體，神明給出的解決方案就越精準。</strong>如果是財運問題，就告訴我具體卡在哪裡；如果是感情問題，說清楚是什麼狀況。</p>
+                    <p class="text-sm leading-relaxed opacity-90">問事過程中，有時神明會自然點出妳沒有說過的細節——可能是妳的職業性質、家庭狀況，或是那件妳以為不重要、根本沒提到的事。這不是每次問事都一定會發生，但確實在很多個案例裡出現過。下面的見證和案例可以讓妳自己判斷。</p>
+                </div>
+                <!-- 點 2 -->
+                <div class="border-l-2 border-brand-gold pl-4">
+                    <h3 class="font-serif text-xl font-bold text-brand-gold mb-2">二、炁絡筆：財運量化 (0–100)</h3>
+                    <p class="text-sm leading-relaxed mb-3 opacity-90">炁絡筆是道教正一教傳承的法術與法器。它的用法跟水晶靈擺有點類似，但最大的不同在於：<strong class="text-white">這支筆在祭煉過程中，是透過變神法請玄天上帝親自來祭煉的</strong> (因為凡胎肉體無祭煉權限)。我的法壇主神就是玄天上帝，所以問事得到的答案，是來自祂的視角。</p>
+                    <p class="text-sm leading-relaxed opacity-90">透過炁絡筆，可以把妳的財運指數具體數字化（0–100），讓能量狀態有個清楚的數字，不用靠感覺猜。</p>
+                </div>
+                <!-- 點 3 -->
+                <div class="border-l-2 border-brand-gold pl-4">
+                    <h3 class="font-serif text-xl font-bold text-brand-gold mb-2">三、冤親債主診斷：先查有沒有人擋門</h3>
+                    <p class="text-sm leading-relaxed opacity-90"><strong class="text-white">開財門之前，得先確認有沒有無形眾生、冤親債主在擋著討債。</strong>如果有人在門口守著，門開了、錢進來了，最後還是會被帶走。先查清楚狀況，才是真正打通財路的正確順序。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 04: 客戶見證 (影片) -->
+        <section class="py-16 px-6 reveal">
+            <div class="text-center mb-8">
+                <span class="text-brand-red font-serif text-sm tracking-widest mb-2 block">客戶真實見證</span>
+                <h2 class="font-serif text-2xl text-brand-dark font-bold mb-3">她沒說的事，神明都知道</h2>
+                <div class="w-12 h-1 bg-brand-gold mx-auto mb-4"></div>
+                <p class="text-sm text-brand-dark/80">以下是一位真實客戶分享她來做問事的經歷。</p>
+            </div>
+
+            <!-- IG 影片嵌入 (完整備用代碼) -->
+            <div class="ig-container mb-8 bg-white flex justify-center items-center overflow-hidden rounded-md shadow-sm">
+                 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DViP8D6EafI/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DViP8D6EafI/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">在 Instagram 查看這則貼文</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DViP8D6EafI/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">仙蒂貝兒的許願湖畔｜八字 · 塔羅 · 開運（@lakesure_bell）分享的貼文</a></p></div></blockquote>
+                 <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+
+            <div class="bg-white border border-brand-border p-5 text-sm leading-relaxed text-brand-dark">
+                <h4 class="font-bold text-brand-red mb-2 font-serif">問事背景</h4>
+                <p class="mb-4">這位客戶的工作是一年一聘制，她想問：今年能不能順利續約？如果沒有續約，能不能找到條件差不多甚至更好的工作？<br>問事結果是：很難。因為她現在這份工作集合了她非常看重的幾個條件——工作性質自由、薪水高、可以居家辦公。要同時找到這幾個條件的工作，本來就不容易。</p>
+
+                <h4 class="font-bold text-brand-red mb-2 font-serif">驗證點</h4>
+                <p class="mb-4">問事過程中，Luna 直接問她：『妳現在是可以居家辦公，對不對？』她當場嚇到：『對，你怎麼知道？』她從來沒有告訴過 Luna 這件事，但這正是她選擇這份工作最重要的條件之一。</p>
+                
+                <h4 class="font-bold text-brand-red mb-2 font-serif">神明點出的心態盲點</h4>
+                <p class="mb-4">她問有什麼辦法可以增加收入，玄天上帝直接指出：她的野心不夠大。她覺得一個月賺十萬已經很多了，所以就只能賺到十萬左右，沒有辦法往更高走。不是能力問題，是心態設定的上限問題。</p>
+
+                <h4 class="font-bold text-brand-red mb-2 font-serif">客戶原話</h4>
+                <div class="bg-brand-cream p-4 border-l-2 border-brand-gold italic">
+                    <p class="mb-2">「上個月請老師幫我開財門問事，老師一開始說我是不是在家裡工作，因為我的主業現在是 work from home。我一開始聽到還覺得這很基本，後來仔細想想才發現我根本沒有跟老師提過這件事。」</p>
+                    <p>「我又問有什麼方法可以增加收入，老師竟然精準地道出『十萬已經很多』。沒想到玄天上帝直接點出，這就是沒有辦法賺大錢的原因。」</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 05: 真實案例 (手風琴交互) -->
+        <section class="py-12 px-6 bg-[#EBE4D5] reveal">
+            <div class="mb-8">
+                <h2 class="font-serif text-2xl text-brand-red font-bold mb-2">她說出了<br>那些你從未提起的事</h2>
+                <p class="text-xs text-brand-dark/70">以下案例均以匿名方式呈現。案例中所有被驗證的細節，都是問事進行中由神明視角揭示，客戶事前未曾主動告知。</p>
+            </div>
+
+            <div class="space-y-3" id="case-accordion">
+                <!-- 案例一 -->
+                <div class="accordion-item bg-white border border-brand-border cursor-pointer">
+                    <div class="accordion-header p-4 flex justify-between items-center bg-white hover:bg-brand-cream/50 transition-colors">
+                        <h3 class="font-serif font-bold text-brand-dark pr-4">案例一：財門前的兩個嬰靈</h3>
+                        <span class="accordion-icon text-brand-gold text-xl">+</span>
+                    </div>
+                    <div class="accordion-content px-4 text-sm text-brand-dark leading-relaxed">
+                        <p class="mb-3">有一個客戶來找我，說她想開財門，覺得自己財運一直很差，錢賺不進來，賺進來也留不住。<br>問事的時候，神明直接告訴我：<strong class="text-brand-red">她這個財門要開，得先處理嬰靈的問題。</strong></p>
+                        <p class="mb-3">我就直接問她：「妳是不是有拿過小孩？」<br>她愣了一下，承認了。總共三次。她說她之前有去辦過超渡，以為處理好了。</p>
+                        <p class="mb-3">我幫她逐一請示神明，結果發現三次裡面只有一次超渡成功，<strong class="text-brand-red">另外兩個從來沒有離開過——一男一女，一直都在。而且其中一個怨氣非常重，已經到了要向她索命的程度。</strong><br>這就是為什麼她事業一直起不來，錢莫名消失，整個人生都卡住、喘不過氣。</p>
+                        <p class="mb-4">後來我們請道長來協助處理超渡法事，跟那兩個靈體談判，把索命的狀況化解掉。處理完之後，她的財路才真正打開。</p>
+                        <div class="p-3 bg-brand-cream text-brand-red font-medium border-l-2 border-brand-red">
+                            驗證點：客戶未曾提及嬰靈問題，是神明在問事過程中主動點出，客戶確認屬實。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例二 -->
+                <div class="accordion-item bg-white border border-brand-border cursor-pointer">
+                    <div class="accordion-header p-4 flex justify-between items-center bg-white hover:bg-brand-cream/50 transition-colors">
+                        <h3 class="font-serif font-bold text-brand-dark pr-4">案例二：媽媽一直在等妳</h3>
+                        <span class="accordion-icon text-brand-gold text-xl">+</span>
+                    </div>
+                    <div class="accordion-content px-4 text-sm text-brand-dark leading-relaxed">
+                        <p class="mb-3">有一個客戶來找我問財運，說自己做什麼事都卡卡的，想知道問題出在哪裡。問事的時候，我習慣會先確認有沒有冤親債主或無形眾生勾角的問題。一問，發現有。我繼續細問，神明說是她母親的問題。</p>
+                        <p class="mb-3">我不知道她母親是否已經往生，就繼續請示：「她母親要傳達什麼？」<br><strong class="text-brand-red">就在那一刻，她母親的靈體直接透過我表達情緒，我當場開始哭。</strong>哭完之後，我感受到的訊息是：<strong class="text-brand-red">「為什麼我的孩子都不來祭拜我？為什麼不來給我供品？」</strong></p>
+                        <p class="mb-3">我問她：「妳的母親是已經往生了嗎？她在找妳。」<br>她嚇到了。她說她母親往生很久了，她們從小就分開，不親也不熟。母親剛往生的時候她有去祭拜過一次，之後就沒有再去了。她完全不知道母親一直都跟在她身邊。</p>
+                        <p class="mb-4">後來我幫她跟母親的靈體溝通，告訴她母親：她已經知道這件事了，之後會去祭拜、準備供品，請先不要勾攪她的財路，讓她先有能力賺到錢，我們才能繼續往下處理。<br>母親答應了，財門才順利打開。</p>
+                        <div class="p-3 bg-brand-cream text-brand-red font-medium border-l-2 border-brand-red">
+                            驗證點：Luna 事前完全不知道客戶母親已往生，也不知道她們關係疏遠、幾乎未曾祭拜。這些細節全部由神明揭示，客戶確認屬實。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例三 -->
+                <div class="accordion-item bg-white border border-brand-border cursor-pointer">
+                    <div class="accordion-header p-4 flex justify-between items-center bg-white hover:bg-brand-cream/50 transition-colors">
+                        <h3 class="font-serif font-bold text-brand-dark pr-4">案例三：她什麼都沒拿到，但保住了命</h3>
+                        <span class="accordion-icon text-brand-gold text-xl">+</span>
+                    </div>
+                    <div class="accordion-content px-4 text-sm text-brand-dark leading-relaxed">
+                        <p class="mb-3">有一個客戶來找我，她老公外面有小三，而且已經提出要離婚。她很痛苦，想知道接下來該怎麼辦。</p>
+                        <p class="mb-3">問事的過程中，我察覺到她身上有被下泰國方面的法術。<strong class="text-brand-red">我跟她描述我看到的法術元素：一個土色的甕，外面纏著土黃色的麻繩。</strong>她當場嚇到了。</p>
+                        <p class="mb-3">因為她之前曾經偷看過她老公的手機，發現老公跟一個泰國降頭師在聯絡。降頭師做完法事之後有傳反饋照片給她老公，<strong class="text-brand-red">照片裡的東西，就是那個甕跟麻繩，跟我描述的完全一樣。這件事她完全沒有告訴我。</strong></p>
+                        <p class="mb-3">她後來也把那個小三的照片給我看。我一看，那個小三背後跟著兩個小鬼，整個人已經被奪舍了——眼神渙散，神智不清的狀態。這就是長期被小鬼附著、被奪取神智的結果。</p>
+                        <p class="mb-3">那個降頭的目的有兩個：一個是讓她老公神智混亂、愛上那個小三；另一個是針對這個客戶的，讓她在離婚談判的時候不敢開口要賠償。<br>我告訴她：「如果妳堅持要追賠償，對方會繼續用更重的法術對付妳，嚴重的話可能會索妳的命。」</p>
+                        <p class="mb-4">她考慮之後，選擇放手。賠償一毛都沒拿到，但她平安走出來了。命留住了，這才是最重要的。</p>
+                        <div class="p-3 bg-brand-cream text-brand-red font-medium border-l-2 border-brand-red">
+                            驗證點：Luna 主動描述法術元素（土色甕、土黃麻繩），客戶事後比對降頭師的法事反饋照片，完全吻合。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 案例四 -->
+                <div class="accordion-item bg-white border border-brand-border cursor-pointer">
+                    <div class="accordion-header p-4 flex justify-between items-center bg-white hover:bg-brand-cream/50 transition-colors">
+                        <h3 class="font-serif font-bold text-brand-dark pr-4">案例四：欠了很久的錢，一個月後還回來了</h3>
+                        <span class="accordion-icon text-brand-gold text-xl">+</span>
+                    </div>
+                    <div class="accordion-content px-4 text-sm text-brand-dark leading-relaxed">
+                        <p class="mb-3">有一個客戶，有一個朋友欠了他一大筆錢，拖了很久沒還，而且那個人還在國外，完全不知道怎麼處理。</p>
+                        <p class="mb-3">問事的時候，我去讀了那個欠債人的狀態：他其實有想還，但就是會一直拖、一直找藉口。<br>問事完之後，我幫他做了開財門的調整，同時也<strong class="text-brand-red">透過法術施加在那個欠債人身上，讓對方還款的意願跟行動力提升。</strong></p>
+                        <p class="mb-3">大概過了一個月左右，那個朋友主動聯繫他，還了一大筆錢——金額比他原本預期能拿回來的還要多。他後來拿著那筆錢，回來報名了我的課程。</p>
+                        <p class="mb-4 font-bold text-brand-red">開財門的法術不只用來打通自己的財路，也可以用來催債。</p>
+                    </div>
+                </div>
+
+                <!-- 案例五 -->
+                <div class="accordion-item bg-white border border-brand-border cursor-pointer">
+                    <div class="accordion-header p-4 flex justify-between items-center bg-white hover:bg-brand-cream/50 transition-colors">
+                        <h3 class="font-serif font-bold text-brand-dark pr-4">案例五：升職、加薪、升官，三件事同時來</h3>
+                        <span class="accordion-icon text-brand-gold text-xl">+</span>
+                    </div>
+                    <div class="accordion-content px-4 text-sm text-brand-dark leading-relaxed">
+                        <img src="client.jpg" alt="客戶對話回饋截圖" class="w-full rounded shadow-sm mb-4 border border-brand-border">
+                        <p class="mb-3">有一個客戶，她的財運指數一開始測出來是 75 分，算是普通，但她覺得工作上一直沒有突破。</p>
+                        <p class="mb-3">我們陸續做了幾次能量調整，讓她每個月的財運指數都維持在 100 分。</p>
+                        <p class="mb-4">調整之後的那段時間，她工作上連續出現三個好消息：<strong class="text-brand-red">升職、薪資調整、還有一個意料之外的升官機會</strong>，在同一段時間內先後發生。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 07: 警告 (提前至流程前，建立急迫性) -->
+        <section class="py-12 px-6 reveal">
+            <div class="border-2 border-brand-red p-6 bg-white relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-red text-white px-4 py-1 font-serif text-sm tracking-widest whitespace-nowrap">
+                    開財門前・必須確認
+                </div>
+                <h3 class="font-serif text-xl font-bold text-brand-red mb-4 mt-2 text-center">關於無形眾生勾角</h3>
+                <p class="text-sm text-brand-dark leading-relaxed mb-4">
+                    如果有冤親債主或無形眾生在勾角，祂們會一直透過財務這條路來提醒妳——這筆債，還沒還。門開了、錢進來了，祂們還是會讓妳把錢花出去。這個問題不解決，財門開了也是白開。
+                </p>
+                <ul class="text-sm text-brand-dark mb-4 space-y-3 font-medium">
+                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-brand-red rounded-full mr-2 mt-1.5 flex-shrink-0"></span><div>嬰靈（未超渡或未成功）</div></li>
+                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-brand-red rounded-full mr-2 mt-1.5 flex-shrink-0"></span><div>冤親債主（過往的糾紛，可能是前世今生累積的；欠下的冤債，不一定是當世的錢財）</div></li>
+                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-brand-red rounded-full mr-2 mt-1.5 flex-shrink-0"></span><div>家神問題（包含往生親屬跟祖先的需求與牽掛）</div></li>
+                    <li class="flex items-start"><span class="w-1.5 h-1.5 bg-brand-red rounded-full mr-2 mt-1.5 flex-shrink-0"></span><div>外靈干擾（如泰國降頭等）</div></li>
+                </ul>
+                <p class="text-xs text-brand-dark/70 leading-relaxed italic border-t border-brand-border pt-4">
+                    * 若發現狀況，會先嘗試談判暫緩干擾。若情況嚴重，Luna 會邀請合作道長協助主持超渡或解冤法事（費用視情況另計）。
+                </p>
+            </div>
+        </section>
+
+        <!-- 區塊 06: 服務流程 -->
+        <section class="py-16 px-6 bg-brand-dark text-brand-cream reveal">
+            <h2 class="font-serif text-2xl font-bold mb-10 text-center text-brand-gold">預約之後，會發生什麼</h2>
+            
+            <div class="relative border-l border-brand-gold/30 ml-4 space-y-10 pb-4">
+                <!-- Step 1 -->
+                <div class="relative pl-6">
+                    <div class="absolute w-3 h-3 bg-brand-gold rounded-full -left-[6px] top-1.5"></div>
+                    <h3 class="font-serif text-lg font-bold text-brand-gold mb-2">STEP 1. 提供具體問題與目標</h3>
+                    <p class="text-sm leading-relaxed mb-3 opacity-90">問題越具體，神明給出的解決方案越精準，我們對目標的共識也會越清楚。<strong class="text-white">例如：「我要怎麼樣達成月收入五十萬？」就比「我要怎麼讓收入增加」來得更具體，因為它有一個明確的線型目標可以去做調整。</strong>感情議題也一樣，給出具體的狀況，才能得到具體的答案。影片問事的話，前情提要必須非常清楚，包含目標與問題。</p>
+                    <p class="text-sm leading-relaxed mb-3 opacity-90">有時候客戶來問投資，結果神明一查發現妳根本沒在投資；或者心態保守不敢投資，卻想問哪個高風險項目適合自己，這就變成投機取巧了。<strong class="text-white">神明會直接點出：妳需要先去學習，不學的話去做就是投機。</strong>這些心態與現狀的盲點，在問事時都會無所遁形。</p>
+                    <p class="text-sm leading-relaxed mb-3 opacity-90">另外有一點想先說清楚：很多人做完財運調整，第一個念頭是「那我是不是快要中樂透了？」</p>
+                    <p class="text-sm leading-relaxed opacity-90 text-brand-gold">橫財這件事，其實是由福報換來的，不是這個服務主要能幫到妳的方向。我們這邊偏向的是正財跟偏財——正職穩定的話，升職加薪是有機會的；如果妳是業績制、有副業，要怎麼提升業績和收入，這些都是可以具體問的，神明會給出很實際的方向。</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative pl-6">
+                    <div class="absolute w-3 h-3 bg-brand-gold rounded-full -left-[6px] top-1.5"></div>
+                    <h3 class="font-serif text-lg font-bold text-brand-gold mb-2">STEP 2. 問事：從高維視角看你的問題</h3>
+                    <p class="text-sm leading-relaxed opacity-90 mb-2">問事會同時進行兩件事：</p>
+                    <p class="text-sm leading-relaxed opacity-90 mb-2"><strong class="text-white">第一，優先診斷有沒有無形力量勾角</strong>——冤親債主、嬰靈、家神、外靈等。這個優先級高於其他問題，因為無形的阻礙不解決，財門開了也沒用，錢進來還是會被帶走。</p>
+                    <p class="text-sm leading-relaxed opacity-90"><strong class="text-white">第二，針對你提出的具體問題，神明給出符合你現狀的解決方案與心態分析</strong>——有時在不知道你產業背景的情況下，也能點出精準的改變方向。</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative pl-6">
+                    <div class="absolute w-3 h-3 bg-brand-gold rounded-full -left-[6px] top-1.5"></div>
+                    <h3 class="font-serif text-lg font-bold text-brand-gold mb-2">STEP 3. 炁絡筆量化財運指數</h3>
+                    <p class="text-sm leading-relaxed opacity-90">請示玄天上帝後，以炁絡筆將你的財運指數數字化（0–100）。指數決定後續是否需要開財門，以及法術介入的強度。</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative pl-6">
+                    <div class="absolute w-3 h-3 bg-brand-gold rounded-full -left-[6px] top-1.5"></div>
+                    <h3 class="font-serif text-lg font-bold text-brand-gold mb-2">STEP 4. 執行方案</h3>
+                    <p class="text-sm leading-relaxed opacity-90">依診斷結果，直接進行開財門法術，或先處理冤親債主、無形問題，再討論後續執行方向。視訊連線約 20 分鐘，或影片問事均可。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 08: 服務方案 -->
+        <section id="pricing" class="py-16 px-6 reveal bg-brand-cream">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl text-brand-red font-bold mb-3">選擇你需要的那一步 🪙</h2>
+                <div class="w-12 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- 方案一 -->
+                <div class="bg-white border border-brand-border p-6 shadow-sm">
+                    <h3 class="font-serif text-xl font-bold text-brand-dark mb-1">方案一｜玄天上帝問事</h3>
+                    <div class="text-2xl font-bold text-brand-red mb-4">$3,000</div>
+                    <ul class="text-sm text-brand-dark space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 財運或感情議題皆可
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 炁絡筆財運指數量化 (0-100)
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 診斷是否有無形眾生勾角
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 神明給出具體可執行的改善建議
+                        </li>
+                    </ul>
+                    <div class="text-xs text-brand-dark/60 bg-brand-cream p-2 text-center">視訊連線約 20 分鐘 / 影片問事</div>
+                </div>
+
+                <!-- 方案二 (推薦) -->
+                <div class="bg-brand-red border border-brand-red p-6 shadow-lg relative overflow-hidden transform scale-[1.02]">
+                    <div class="absolute top-4 right-[-30px] bg-brand-gold text-white text-xs font-bold py-1 px-10 transform rotate-45 shadow-md tracking-wider">
+                        推薦
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-brand-gold mb-1">方案二｜問事 + 開財門 💰</h3>
+                    <div class="text-3xl font-bold text-white mb-4">$8,888</div>
+                    <ul class="text-sm text-brand-cream/90 space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 包含方案一所有項目
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 炁絡筆開財門法術 (由 Luna 執行)
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 打通財路能量阻隔，調高財運頻率
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold mr-2">✔</span> 法術後燒元寶供奉酬謝神明與兵馬
+                        </li>
+                    </ul>
+                    <div class="text-xs font-bold text-brand-red bg-brand-gold p-3 text-center">
+                        建議財運指數 80 分以下、需要激進調整者選擇
+                    </div>
+                </div>
+            </div>
+
+            <!-- 法事與水晶附加服務 -->
+            <div class="mt-10 p-5 border border-brand-border bg-white text-sm">
+                <h4 class="font-serif font-bold text-brand-red mb-4 text-center border-b border-brand-border pb-2">其他法事與能量協作</h4>
+                <div class="space-y-4 text-brand-dark">
+                    <div class="flex justify-between items-center">
+                        <span>奇門丙火送冤親債主</span>
+                        <span class="font-bold">$6,666</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>嬰靈超渡</span>
+                        <span class="font-bold">$5,000</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span>人物超渡 <span class="text-xs text-gray-500">(66歲前非正常離世)</span></span>
+                        <span class="font-bold">$26,000</span>
+                    </div>
+                    <div class="pt-3 mt-3 border-t border-brand-border border-dashed">
+                        <span class="font-bold block mb-1 text-brand-red flex items-center">💎 聚財水晶 (價格私訊)</span>
+                        <span class="text-xs text-gray-600 block mt-2">✦ 印鈔廠｜水晶能量擺飾，放置財位</span>
+                        <span class="text-xs text-gray-600 block mt-1">✦ 印鈔機｜水晶能量飾品，隨身佩戴</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 09: 底部 CTA -->
+        <section class="py-16 px-6 bg-brand-red text-center relative reveal">
+            <h2 class="font-serif text-2xl text-brand-gold font-bold mb-4">不要讓因果的債<br>賠掉妳辛苦賺來的錢</h2>
+            <p class="text-sm text-brand-cream/80 leading-relaxed mb-8 max-w-[280px] mx-auto">
+                先診斷清楚，看有沒有人在擋著妳的門，再開門引財。<br>這才是真正守得住錢的正確順序。
+            </p>
+            <a href="#" onclick="alert('導向客服或Line預約')" class="inline-block bg-brand-gold text-brand-red font-bold text-lg px-8 py-4 rounded-none shadow-lg tracking-widest hover:bg-white transition-colors w-full max-w-[280px]">
+                💰找 Luna 開財門🧧
+            </a>
+            <!-- 移除了版權宣告 -->
+        </section>
+
+    </div>
+
+    <!-- 懸浮底部按鈕 (Scroll後顯示) -->
+    <div class="sticky-cta flex justify-center max-w-md mx-auto right-0" id="stickyCta">
+        <a href="#pricing" class="block w-full text-center bg-brand-red text-brand-cream font-bold py-3 text-lg tracking-widest shadow-lg active:scale-95 transition-transform">
+            💰找 Luna 開財門🧧
+        </a>
+    </div>
+
+    <script>
+        // 手風琴 (Accordion) 互動邏輯
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const content = button.nextElementSibling;
+                const isActive = accordionItem.classList.contains('active');
+
+                // 先關閉所有的 accordion
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-content').style.maxHeight = null;
+                    item.querySelector('.accordion-icon').textContent = '+';
+                });
+
+                // 如果點擊的不是原本打開的，就打開它
+                if (!isActive) {
+                    accordionItem.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 40 + "px"; // +40 for padding
+                    button.querySelector('.accordion-icon').textContent = '−';
+                }
+            });
+        });
+
+        // 滾動漸顯動畫 (Scroll Reveal)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // 初始化檢查
+
+        // 懸浮按鈕顯示邏輯
+        const stickyCta = document.getElementById('stickyCta');
+        const heroSection = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            // 當滾動超過首屏 Hero 區塊時顯示懸浮按鈕
+            if (window.scrollY > heroSection.offsetHeight - 100) {
+                stickyCta.classList.add('show');
+            } else {
+                stickyCta.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
